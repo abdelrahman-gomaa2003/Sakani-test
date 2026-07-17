@@ -1,0 +1,501 @@
+/* ===== Owner Pages — Shared Animations & UI ===== */
+
+/* Fade In Up */
+@keyframes ownerFadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade In */
+@keyframes ownerFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide In Right (sidebar) */
+@keyframes ownerSlideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale In */
+@keyframes ownerScaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Pulse ring for avatar */
+@keyframes ownerPulseRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Staggered fade-in for lists */
+.owner-stagger > * { animation: ownerFadeInUp 0.45s ease both; }
+.owner-stagger > *:nth-child(1) { animation-delay: 0.04s; }
+.owner-stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.owner-stagger > *:nth-child(3) { animation-delay: 0.12s; }
+.owner-stagger > *:nth-child(4) { animation-delay: 0.16s; }
+.owner-stagger > *:nth-child(5) { animation-delay: 0.20s; }
+.owner-stagger > *:nth-child(6) { animation-delay: 0.24s; }
+
+/* Card hover lift */
+.owner-card {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.owner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(107, 144, 128, 0.12);
+}
+
+/* Button hover lift */
+.owner-btn-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.owner-btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 144, 128, 0.22);
+}
+.owner-btn-lift:active {
+  transform: translateY(0);
+}
+
+/* Smooth input focus */
+.owner-input {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.owner-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(107, 144, 128, 0.12) !important;
+}
+
+/* Avatar upload pulse overlay */
+.owner-avatar-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  animation: ownerPulseRing 1.5s ease-out infinite;
+  pointer-events: none;
+}
+
+/* Section reveal */
+.owner-section {
+  animation: ownerFadeInUp 0.5s ease both;
+}
+
+/* Sidebar nav item hover */
+.owner-nav-item {
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+  border-right: 4px solid transparent;
+}
+.owner-nav-item:hover {
+  background: linear-gradient(90deg, rgba(107,144,128,0.06) 0%, transparent 100%);
+}
+.owner-nav-item.active {
+  background: linear-gradient(90deg, rgba(107,144,128,0.10) 0%, transparent 100%);
+  border-right-color: var(--primary);
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+/* Topbar glass */
+.owner-topbar {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.45);
+}
+
+/* Sidebar glass */
+.owner-sidebar {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(226, 232, 240, 0.45);
+}
+
+/* Section card (white bg + shadow) */
+.owner-section-card {
+  background: var(--white, #fff);
+  border-radius: var(--radius-lg, 18px);
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(0,0,0,0.05));
+  border: 1px solid rgba(221, 216, 208, 0.25);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.owner-section-card:hover {
+  box-shadow: var(--shadow-lg, 0 12px 40px rgba(0,0,0,0.06));
+}
+
+/* Status badge */
+.owner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--fs-xs, 0.875rem);
+  font-weight: 600;
+  transition: transform 0.18s ease;
+}
+.owner-badge .material-symbols-outlined { font-size: 18px; }
+.owner-badge:hover { transform: scale(1.05); }
+
+/* Video player container */
+.owner-video-container {
+  position: relative;
+  border-radius: var(--radius-lg, 18px);
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.owner-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Upload zone */
+.owner-upload-zone {
+  border: 2px dashed var(--primary);
+  border-radius: var(--radius-lg, 18px);
+  background: rgba(107, 144, 128, 0.02);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.owner-upload-zone:hover,
+.owner-upload-zone.drag-over {
+  background: rgba(107, 144, 128, 0.06);
+  border-color: var(--primary-dark, #4A6E5C);
+  transform: scale(1.005);
+}
+
+/* Main content offset for fixed sidebar */
+.owner-main-content {
+  margin-right: 0;
+  font-size: var(--fs-base, 1.0625rem);
+}
+@media (min-width: 768px) {
+  .owner-main-content {
+    margin-right: 270px;
+  }
+}
+
+/* ===== Broker Video Container (alias) ===== */
+.broker-video-container {
+  position: relative;
+  border-radius: var(--radius-lg, 18px);
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.broker-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== Subscription Card Hover ===== */
+.sub-plan-card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease;
+  cursor: default;
+}
+.sub-plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(107, 144, 128, 0.15);
+}
+.sub-plan-card.sub-highlight {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgba(45, 106, 79, 0.15);
+}
+.sub-plan-card.sub-highlight:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 48px rgba(45, 106, 79, 0.2);
+}
+.sub-plan-card.sub-current {
+  border-color: var(--success, #10b981) !important;
+}
+.sub-plan-card.sub-current:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Subscription Badge Animations ===== */
+@keyframes subBadgeShine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+.sub-badge-popular {
+  background: linear-gradient(90deg, var(--primary) 0%, #2D6A4F 50%, var(--primary) 100%);
+  background-size: 200% 100%;
+  animation: subBadgeShine 3s ease-in-out infinite;
+}
+.sub-badge-value {
+  background: linear-gradient(90deg, #E9A23B 0%, #D4941A 50%, #E9A23B 100%);
+  background-size: 200% 100%;
+  animation: subBadgeShine 3s ease-in-out infinite;
+}
+.sub-badge-recommended {
+  background: linear-gradient(90deg, #8B5CF6 0%, #6D28D9 50%, #8B5CF6 100%);
+  background-size: 200% 100%;
+  animation: subBadgeShine 3s ease-in-out infinite;
+}
+
+/* ===== Subscription Button States ===== */
+.sub-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.sub-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 144, 128, 0.25);
+}
+.sub-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.sub-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===== Progress Bar ===== */
+@keyframes progressFill {
+  from { width: 0; }
+}
+.progress-animated .progress-bar-animated {
+  animation: progressFill 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes progressStripe {
+  0% { background-position: 1rem 0; }
+  100% { background-position: 0 0; }
+}
+.progress-striped .progress-bar-animated {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255,255,255,0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progressStripe 1s linear infinite;
+}
+
+/* ===== Gallery Lightbox ===== */
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes lightboxScaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxFadeIn 0.25s ease both;
+  backdrop-filter: blur(8px);
+}
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  animation: lightboxScaleIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox-content video {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(4px);
+}
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+}
+.lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+.lightbox-thumb-bar {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  max-width: 80vw;
+  overflow-x: auto;
+}
+.lightbox-thumb {
+  width: 56px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+.lightbox-thumb.active {
+  opacity: 1;
+  border-color: white;
+}
+.lightbox-thumb:hover {
+  opacity: 0.8;
+}
+
+/* ===== Gallery Hover Overlay ===== */
+.gallery-grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: var(--radius-lg, 18px);
+}
+.gallery-grid-item img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gallery-grid-item:hover img {
+  transform: scale(1.04);
+}
+.gallery-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  border-radius: inherit;
+}
+.gallery-grid-item:hover .gallery-grid-overlay {
+  opacity: 1;
+}
+
+/* ===== Upload Progress ===== */
+@keyframes uploadPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.upload-progress-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-container-low, #F5F3EE);
+  overflow: hidden;
+}
+.upload-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+.upload-progress-fill.upload-error {
+  background: var(--danger, #dc3545);
+}
+.upload-progress-fill.upload-success {
+  background: var(--success, #10b981);
+}
+
+/* ===== Video Metadata Pill ===== */
+.video-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  font-size: var(--fs-xs, 0.875rem);
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+.video-meta-pill .material-symbols-outlined { font-size: 16px; }
+
+/* ===== Dark theme adjustments ===== */
+[data-theme="dark"] .owner-sidebar {
+  background: rgba(26, 32, 40, 0.88);
+  border-left-color: rgba(53, 64, 72, 0.5);
+}
+[data-theme="dark"] .owner-topbar {
+  background: rgba(26, 32, 40, 0.78);
+  border-bottom-color: rgba(53, 64, 72, 0.45);
+}
+[data-theme="dark"] .owner-section-card {
+  background: var(--surface-card);
+  border-color: rgba(53, 64, 72, 0.25);
+}
+[data-theme="dark"] .lightbox-thumb-bar {
+  background: rgba(30,30,30,0.6);
+}
+[data-theme="dark"] .sub-plan-card {
+  background: var(--surface-card);
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: var(--background);
+  color: var(--on-surface);
+}
+
+/* ===== Icon Size Utilities ===== */
+.icon-xs { font-size: 14px !important; }
+.icon-sm { font-size: 18px !important; }
+.icon-md { font-size: 22px !important; }
+.icon-lg { font-size: 26px !important; }
+.icon-xl { font-size: 32px !important; }
+
+/* ===== Text Size Utilities ===== */
+.text-xs { font-size: var(--fs-xs, 0.875rem) !important; }
+.text-sm { font-size: var(--fs-sm, 0.975rem) !important; }
+.text-base { font-size: var(--fs-base, 1.0625rem) !important; }
+.text-lg { font-size: var(--fs-lg, 1.175rem) !important; }
+.text-xl { font-size: var(--fs-xl, 1.35rem) !important; }
+.text-2xl { font-size: var(--fs-2xl, 1.6rem) !important; }
+.text-3xl { font-size: var(--fs-3xl, 1.9rem) !important; }
+
+/* ===== Truncate Utility ===== */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,109 @@
+.notfound-page{
+    min-height:100vh;
+    background:linear-gradient(135deg,#f8faf9,#eef7f2);
+}
+
+.error-image{
+    position:relative;
+}
+
+.house-circle{
+
+    width:220px;
+    height:220px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:90px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.error-number{
+
+    font-size:150px;
+
+    font-weight:800;
+
+    color:rgba(107,144,128,.15);
+
+    margin-top:-40px;
+
+}
+
+.sakani-badge{
+
+    background:rgba(107,144,128,.15);
+
+    color:var(--primary);
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+}
+
+.btn-success{
+
+    background:var(--primary);
+
+    border:none;
+
+}
+
+.btn-success:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.btn-outline-success{
+
+    color:var(--primary);
+
+    border-color:var(--primary);
+
+}
+
+.btn-outline-success:hover{
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+}
+
+@media(max-width:768px){
+
+.error-number{
+
+font-size:90px;
+
+}
+
+.house-circle{
+
+width:160px;
+
+height:160px;
+
+font-size:70px;
+
+}
+
+}

@@ -1,0 +1,56 @@
+.skeleton-card {
+  background: #fff;
+  border: 1px solid rgba(208, 208, 208, 0.1);
+}
+
+.skeleton-image {
+  background: linear-gradient(110deg, #e8e8e8 30%, #f0f0f0 50%, #e8e8e8 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  width: 100%;
+  min-height: 160px;
+}
+
+.skeleton-line {
+  border-radius: 8px;
+  background: linear-gradient(110deg, #e8e8e8 30%, #f0f0f0 50%, #e8e8e8 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  height: 14px;
+}
+
+.skeleton-line-title {
+  width: 70%;
+  height: 16px;
+}
+
+.skeleton-line-subtitle {
+  width: 45%;
+  height: 12px;
+}
+
+.skeleton-line-short {
+  width: 30%;
+}
+
+.skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(110deg, #e8e8e8 30%, #f0f0f0 50%, #e8e8e8 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(110deg, #e8e8e8 30%, #f0f0f0 50%, #e8e8e8 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sakani-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.2",
+    "cors": "^2.8.5",
+    "cron": "^3.3.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.16",
+    "pdf-lib": "^1.17.1",
+    "resend": "^4.1.2"
+  }
+}
