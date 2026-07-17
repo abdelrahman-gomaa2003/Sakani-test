@@ -19,8 +19,25 @@ import { startCronJobs } from "./cron/cleanup.js";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: ["http://localhost:5174", "http://localhost:5173"] }));
+// app.use(cors({ origin: ["http://localhost:5174", "http://localhost:5173"]
+// 
+// 
+//  }));
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      process.env.FRONTEND_URL,
+    ],
+    credentials: true,
+  })
+);
+
+
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
   res.json({ message: "Sakani API is running", version: "1.0.0" });
