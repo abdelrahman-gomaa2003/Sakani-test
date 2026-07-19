@@ -30,6 +30,11 @@ function BrokerLayout() {
 
   return (
     <div className="d-flex" style={{ minHeight: "100vh" }}>
+      <style>{`
+        @media (min-width: 992px) {
+          .broker-main-area { margin-left: 280px; }
+        }
+      `}</style>
       {/* Sidebar - Desktop */}
       <aside
         className="d-none d-lg-flex flex-column position-fixed top-0 end-0 bottom-0 z-3"
@@ -130,7 +135,7 @@ function BrokerLayout() {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-grow-1" style={{ marginRight: 0 }}>
+      <div className="flex-grow-1 broker-main-area" style={{ marginRight: 0 }}>
         {/* Topbar */}
         <header
           className="sticky-top top-0 d-flex align-items-center justify-content-between px-3 px-md-4 z-3"

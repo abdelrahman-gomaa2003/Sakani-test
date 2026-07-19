@@ -26,6 +26,10 @@ function Footer() {
         .scroll-top-btn { position: fixed; bottom: 30px; left: 30px; width: 44px; height: 44px; border-radius: 50%; background: var(--primary, #6B9080); color: #fff; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(107,144,128,0.4); transition: all 0.3s ease; z-index: 1000; }
         .scroll-top-btn:hover { background: var(--primary-dark, #4A6E5C); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(107,144,128,0.5); }
         .scroll-top-btn .material-symbols-outlined { font-size: 22px; }
+        @media (max-width: 575.98px) {
+          .scroll-top-btn { bottom: 16px; left: 16px; width: 40px; height: 40px; }
+        }
+        .footer-col-title { text-align: right; }
       `}</style>
 
       <footer className="footer-section" style={{ borderTop: "3px solid var(--primary, #6B9080)" }}>

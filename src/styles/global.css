@@ -433,6 +433,31 @@ a:hover {
   .btn-lg { padding: 0.75rem 1.6rem; font-size: var(--fs-base); }
 }
 
+/* ===== Responsive utilities ===== */
+@media (max-width: 767.98px) {
+  .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .card-body { padding: 1rem; }
+  .modal-dialog { margin: 0.5rem; }
+  .modal-content { border-radius: var(--radius-lg, 18px) !important; }
+  .dropdown-menu { min-width: 180px; }
+  .sticky-top { z-index: 1020; }
+  .row { --bs-gutter-x: 1rem; }
+  .px-md-4, .px-lg-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
+
+@media (max-width: 575.98px) {
+  .row { --bs-gutter-x: 0.75rem; }
+  .col-6 { flex: 0 0 auto; width: 100%; }
+  .d-flex.gap-2 { gap: 0.5rem !important; }
+  .mb-4 { margin-bottom: 1.25rem !important; }
+  .mb-5 { margin-bottom: 1.5rem !important; }
+  .p-4 { padding: 1rem !important; }
+  .p-lg-5 { padding: 1.5rem !important; }
+  .display-5 { font-size: 1.4rem !important; }
+  .lead { font-size: 1rem !important; }
+  .form-control-lg, .form-select-lg { padding: 0.6rem 0.8rem; font-size: var(--fs-sm, 0.975rem); }
+}
+
 /* ===== Dark theme ===== */
 [data-theme="dark"] body {
   background-color: #121820;

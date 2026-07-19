@@ -372,3 +372,51 @@ details summary::-webkit-details-marker {
     width: 100%;
   }
 }
+
+/* ===== Responsive: Admin / Dashboard ===== */
+@media (max-width: 767.98px) {
+  .stat-card { padding: 1rem !important; }
+  .stat-card .display-6 { font-size: 1.3rem !important; }
+  .chart-container { min-height: 200px; }
+}
+
+/* ===== Responsive: Tables on mobile ===== */
+@media (max-width: 767.98px) {
+  .table thead { display: none; }
+  .table tbody tr {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 12px);
+    background: var(--surface-card);
+  }
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border: none;
+    text-align: left;
+  }
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: var(--fs-xs, 0.875rem);
+    color: var(--on-surface-variant);
+  }
+}
+
+/* ===== Responsive: Auth pages ===== */
+@media (max-width: 575.98px) {
+  .auth-page-container {
+    padding: 1rem !important;
+    min-height: auto !important;
+  }
+  .auth-card {
+    padding: 1.5rem !important;
+    border-radius: var(--radius-md, 12px) !important;
+  }
+}
+
+/* ===== Responsive: Owner/Broker sidebar offsets ===== */

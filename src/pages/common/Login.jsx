@@ -74,7 +74,7 @@ function Login() {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container py-3 py-lg-5">
       <style>{`
         @keyframes loginFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .login-card { animation: loginFadeIn 0.5s ease; }

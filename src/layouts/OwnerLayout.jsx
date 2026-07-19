@@ -55,6 +55,11 @@ function OwnerLayout() {
 
   return (
     <div className="d-flex" style={{ minHeight: "100vh", background: "var(--background, #FAFAF7)" }}>
+      <style>{`
+        @media (min-width: 768px) {
+          .owner-main-area { margin-left: 270px; }
+        }
+      `}</style>
       {/* Desktop Sidebar */}
       <aside
         className="d-none d-md-flex flex-column position-fixed top-0 end-0 bottom-0 owner-sidebar"
@@ -122,7 +127,7 @@ function OwnerLayout() {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-grow-1 d-flex flex-column owner-main-content">
+      <div className="flex-grow-1 d-flex flex-column owner-main-area">
         {/* Topbar */}
         <header
           className="sticky-top top-0 d-flex align-items-center px-3 px-md-4 owner-topbar"
